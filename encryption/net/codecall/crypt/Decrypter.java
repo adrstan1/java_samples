@@ -51,7 +51,8 @@ public class Decrypter<T extends Serializable> {
 	private Cipher getCipher(CipherParams cipherParams) throws NoSuchAlgorithmException, 
 			InvalidKeySpecException, NoSuchPaddingException, 
 			InvalidKeyException, InvalidAlgorithmParameterException{
-		PBEParameterSpec pbeParamSpec = new PBEParameterSpec(cipherParams.getSalt(), 20);
+		PBEParameterSpec pbeParamSpec = new PBEParameterSpec(cipherParams.getSalt(), 
+				cipherParams.getIterationCount());
 	    PBEKeySpec pbeKeySpec = new PBEKeySpec(cipherParams.getPassphrase());
 	    SecretKeyFactory secretKeyFactory = 
 	        SecretKeyFactory.getInstance(CipherParams.ALGORITHM);

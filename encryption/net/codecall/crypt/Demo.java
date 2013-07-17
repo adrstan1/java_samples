@@ -17,7 +17,7 @@ public class Demo {
 			
 			// Store a person in encrypted format.
 			Person person1 = new Person("Doe", "John", 34);
-			CipherParams cipherParams = new CipherParams("secret", salt, 100);
+			CipherParams cipherParams = new CipherParams("secret", salt, 1000);
 			encrypter = new Encrypter<Person>(cipherParams, "Person.ser");
 			encrypter.store(person1);
 			System.out.println(person1);
