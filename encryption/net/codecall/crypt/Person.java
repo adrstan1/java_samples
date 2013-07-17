@@ -26,6 +26,7 @@ public class Person implements Serializable {
 	    return age;
 	}
 	
+	@Override
 	public String toString() {
 	    return firstName + ", " + lastName + ", " + age;
 	}
